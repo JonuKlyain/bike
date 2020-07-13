@@ -1,0 +1,140 @@
+.header
+    position: absolute
+    width: 100%
+    z-index: 50
+    left: 0
+    top: 35px
+    &__row
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 85px
+    &__logo
+        position: absolute
+        left: 50%
+        top: 0
+        transform: translateX(-50%)
+.menu
+    &__list
+        display: flex
+        font-size: 13px
+        li
+            position: relative
+            padding: 0  37.5px
+            &:nth-child(2)
+                padding: 0 110px 0 37.5px
+            &:nth-child(3)
+                padding: 0 37.5px 0 110px
+            &:after
+                content: ''
+                width: 2px
+                height: 2px
+                background-color: #5f5b6a
+                border-radius: 50%
+                position: absolute
+                right: 0
+                top: 50%
+                margin-bottom: 1px
+            &:last-child,
+            &:nth-child(2)
+                &:after
+                    display: none
+
+    &__link
+        color: #4d4959
+        font-size: 13px
+        font-weight: 700
+        text-transform: uppercase
+@media (max-width: 767px)
+    body.lock
+        overflow: hidden
+    .header
+        top: 15px
+
+    .menu__body
+        position: fixed
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        overflow: auto
+        background-color: #5f5b6a
+        padding-top: 140px
+        transform: translateY(-100%)
+        transition: all 0.3s ease 0s
+        &.active
+            transform: translateY(0px)
+
+    .menu__list
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        li 
+            padding: 0 0 45px 0
+            &:nth-child(2),
+            &:nth-child(3)
+                padding: 0 0 45px 0
+                &:after
+                    display: block
+            &:last-child
+                padding: 0
+            &:after
+                width: 4px
+                height: 4px
+                background-color: #fff
+                right: 50%
+                top: 40px
+                margin-right: -2px
+
+    .menu__link
+        color: #fff
+        font-size: 20px
+
+    .menu__icon
+        display: block
+        position: absolute
+        width: 30px
+        height: 20px
+        z-index: 5
+        top: 37px
+        right: 10px
+        cursor: pointer
+        span
+            position: absolute
+            background-color: #5f5b6a
+            width: 100%
+            height: 2px
+            left: 0
+            top: 9px
+            transition: all 0.3s ease 0s
+        &::after,
+        &::before
+            content: ''
+            background-color: #5f5b6a
+            position: absolute
+            width: 100%
+            height: 2px
+            left: 0
+            transition: all 0.3s ease 0s
+        &::before
+            top: 0
+        &::after
+            bottom: 0
+    .menu__icon.active
+        span
+            transform: scale(0)
+            background-color: #fff
+        &::before
+            transform: rotate(45deg)
+            top: 9px
+            background-color: #fff
+        &::after
+            transform: rotate(-45deg)
+            bottom: 9px
+            background-color: #fff
+
+
+
+        
+
+  

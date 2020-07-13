@@ -1,0 +1,52 @@
+.shop
+    &__body
+        display: flex
+    &__column
+        flex: 0 1 16.666%
+        &_b
+            flex: 0 1 33.333%
+    &__footer
+        background-color: #282f35
+        padding: 75px 0
+        text-align: center
+    &__btn
+        display: inline-block
+        line-height: 48px
+        height: 50px
+        color: #fff
+        letter-spacing: 2.8px
+        padding: 0 60px
+        border: 1px solid rgba(255, 255, 255, 0.5)
+        font-size: 14px
+        font-weight: 700
+        text-transform: uppercase
+.block-shop
+    height: 100%
+    &__row
+        display: flex
+    &__column
+        flex: 0 1 50%
+    &__item
+        height: auto
+        padding: 0 0 100% 0
+        &_b
+            padding: 0 0 200.5% 0
+.small_item
+    padding: 0 0 50% 0
+
+@media (max-width: 1100px)
+    .shop
+        &__body
+            flex-wrap: wrap
+        &__column
+            flex: 0 1 50%
+            &:first-child
+                flex: 0 1 100%
+            &:last-child
+                flex: 0 1 100%
+        &__footer
+            padding: 50px 0
+        &__btn
+            padding: 0 30px
+
+        

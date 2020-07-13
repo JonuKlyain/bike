@@ -1,0 +1,107 @@
+.brands
+    &__row
+        display: flex
+    &__column
+        flex: 0 1 33.333%
+        &_b
+            flex: 0 1 66.667%
+    &__content
+        padding: 70px 65px 55px 65px
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            bottom: -10px
+            left: 50%
+            margin-left: -10px
+            width: 0
+            height: 0
+            z-index: 2
+            border-left: 10px solid transparent
+            border-right: 10px solid transparent
+            border-top: 10px solid #fff
+    .block__text_j
+        text-align: justify
+        font-size: 16px
+        line-height: 30px
+        margin: 0 auto
+        &::after
+            content: ''
+            display: block
+            margin: 35px auto 0 auto
+            width: 50px
+            height: 1px
+            background-color: #d7d7d7
+    &__image
+        padding: 0 0 37.5% 0
+.item   
+    height: 100%
+    display: block
+    position: relative
+    &__logo
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        background-color: rgba(106, 194, 158, 0.5)
+        transition: all 0.4s ease 0s
+        z-index: 2
+        opacity: 0
+        visibility: hidden
+        span
+            
+            color: #ffffff
+            font-size: 14px
+            font-weight: 700
+            text-transform: uppercase
+            letter-spacing: 2.8px
+            margin-top: 10px
+    &__image
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+    
+    &:hover
+        .item__logo
+            opacity: 1
+            visibility: visible
+
+
+.brands
+    &__row
+        &_rev
+            flex-direction: row-reverse
+
+@media (max-width: 1500px)
+    .brands
+        &__content
+            padding: 40px 35px 55px 35px
+        .block__text_j
+            &::after
+                width: 30px
+                height: 1px
+@media (max-width: 1100px)
+    .brands
+        &__row  
+            flex-direction: column
+            &_last
+                .brands__column
+                    &:nth-child(1),
+                        order: 2
+                    &:nth-child(2),
+                        order: 1
+                    &:nth-child(3)
+                        order: 3
+                        
+        .item
+            display: block
+            height: auto
+            padding: 0 0 70% 0
+    
